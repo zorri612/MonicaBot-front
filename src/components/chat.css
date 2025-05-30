@@ -1,0 +1,125 @@
+.chat-container {
+  max-width: 700px;
+  margin: 5vh auto;
+  padding: 2rem;
+  background: #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 85vh;
+  color: black;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.reset-btn {
+  background: #dc2626;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.reset-btn:hover {
+  background: #b91c1c;
+}
+
+.chat-box {
+  flex: 1;
+  overflow-y: auto;
+  border: 1px solid #8400ff;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #cbd5e1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.chat-message {
+  max-width: 70%;
+  padding: 0.75rem 1rem;
+  border-radius: 18px;
+  line-height: 1.4;
+  font-size: 1rem;
+  word-wrap: break-word;
+  position: relative;
+}
+
+.chat-message.user {
+  align-self: flex-end;
+  background-color: #06cf06;
+  color: white;
+  border-bottom-right-radius: 0;
+}
+
+.chat-message.bot {
+  align-self: flex-start;
+  background-color: #30075f;
+  color: #ffffff;
+  border-bottom-left-radius: 0;
+}
+
+.chat-form {
+  display: flex;
+  gap: 1rem;
+}
+
+.chat-form input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.chat-form button {
+  background-color: #06cf06;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.25rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.chat-form button:hover {
+  background-color: #038603;
+}
+
+.sendmail-btn {
+  background-color: #009fb4;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.25rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.sendmail-btn:hover {
+  background-color: #007d86;
+}
+
+.logout-btn {
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.25rem;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: 50px;
+}
+.logout-btn:hover {
+  background-color: #aa0000;
+}
