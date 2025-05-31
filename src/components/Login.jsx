@@ -12,20 +12,26 @@ function Login() {
 const navigate = useNavigate();
   const handleSubmit = async e => {
     e.preventDefault();
-    try {
-      const res = await axios.post('http://localhost:5000/api/auth/login', form);
-      setMessage('Bienvenido ' + res.data.user.name);
-      localStorage.setItem('token', res.data.token); // Puedes guardar también el nombre/email si quieres
-      navigate('/chat'); // redirigir al componente de chat
-      
-    } catch (err) {
-      setMessage(err.response?.data?.message || 'Error al iniciar sesión');
+
+  try {
+  const res = await axios.post(
+    'https://monica-bot-back.vercel.app/api/auth/login',
+    form,
+    {
+      headers: {
+        'Content-Type': 'application/json'
+      }
     }
+  );
 
-    
-    navigate('/chat'); // Redirigir al chat después de iniciar sesión
-  };
-
+  setMessage('Bienvenido ' + res.data.user.name);
+  localStorage.setItem('token', res.data.token);
+  navigate('/chat');
+} catch (err) {
+  setMessage(err.response?.data?.message || 'Error al iniciar sesión');
+}
+  }
+  
   return (
     <div className="auth-container">
       <h2 > Iniciar Sesión</h2>
