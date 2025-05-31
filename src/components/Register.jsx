@@ -7,16 +7,25 @@ function Register() {
 
   const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleSubmit = async e => {
-    e.preventDefault();
-    try {
-      const res = await axios.post('http://localhost:5000/api/auth/register', form);
-      setMessage(res.data.message);
-      navigate('/login'); // redirigir al componente de login después de registrarse
-    } catch (err) {
-      setMessage(err.response?.data?.message || 'Error registrando');
-    }
-  };
+ const handleSubmit = async e => {
+  e.preventDefault();
+  try {
+    const res = await axios.post(
+      'https://monica-bot-back.vercel.app/api/auth/register', // usa esta si estás en producción
+      form,
+      {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+    );
+    setMessage(res.data.message);
+    navigate('/login'); // redirigir al componente de login después de registrarse
+  } catch (err) {
+    setMessage(err.response?.data?.message || 'Error registrando');
+  }
+};
+
 
   return (
     <div className="auth-container">
