@@ -38,7 +38,11 @@ function Register() {
         <p>Ingresa la contraseña con la que3 ingresarás</p>
         <input name="password" type="password" placeholder="abc123" onChange={handleChange} required />
         <button type="submit">Registrar</button>
-        <center><p>¿Ya tienes cuenta? <a href="/login">Inicia sesión aquí</a></p></center>
+        <center>
+          <p>
+            ¿Ya tienes una cuenta? <Link to="/register">Inicia sesión</Link>
+          </p>
+        </center>
       </form>
       {message && <p>{message}</p>}
     </div>
