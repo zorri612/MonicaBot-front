@@ -24,7 +24,7 @@ function Chat() {
  
     const fetchHistory = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/chat/history', {
+        const res = await axios.get('https://monica-bot-back.vercel.app/api/chat/history', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setMessages(res.data);
@@ -38,7 +38,7 @@ function Chat() {
 
   const handleReset = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/chat/reset', {
+      const res = await fetch('https://monica-bot-back.vercel.app/api/chat/reset', {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -64,7 +64,7 @@ function Chat() {
 
     try {
       const res = await axios.post(
-        'http://localhost:5000/api/chat/send',
+        'https://monica-bot-back.vercel.app/api/chat/send',
         { message: input },
         { headers: { Authorization: `Bearer ${token}` } }
         
@@ -83,7 +83,7 @@ function Chat() {
   const handleExport = async () => {
     try {
       const res = await axios.post(
-        'http://localhost:5000/api/chat/export',
+        'https://monica-bot-back.vercel.app/api/chat/export',
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
