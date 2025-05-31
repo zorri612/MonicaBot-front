@@ -42,7 +42,7 @@ function Register() {
         <button type="submit">Registrar</button>
         <center>
           <p>
-            ¿Ya tienes una cuenta? <Link to="/register">Inicia sesión</Link>
+            ¿Ya tienes una cuenta? <Link to="/login">Inicia sesión</Link>
           </p>
         </center>
       </form>
